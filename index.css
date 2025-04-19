@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+#vanta-bg {
+  min-height: 100vh;         
+  width: 100%;
+  overflow: visible;         
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Search Section (Always visible) === */
+.search-section {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 120px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.search-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  -webkit-text-stroke: 0.8px black; /* 🔥 Adds a black outline */
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid #333;
+  background: transparent;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.weather-container {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+/* === Show when user searches === */
+.weather-container.visible {
+  display: block;
+}
+
+/* === Result box styling === */
+.result-box {
+  margin-top: 20px;
+}
+
+/* === Forecast Grid === */
+.forecast-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* === Forecast Cards === */
+.forecast-card {
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  flex: 1 1 150px;
+  min-width: 140px;
+  max-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+}
+
+/* === General Body Style === */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .forecast-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .forecast-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

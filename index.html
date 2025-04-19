@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Vanta.js and Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+</head>
+
+<body>
+  <div id="vanta-bg">
+    <!-- Always visible search section -->
+    <div class="search-section">
+      <h1>Weather Dashboard</h1>
+      <input type="text" id="cityInput" placeholder="Enter city..." />
+      <button onclick="getWeather()">Search</button>
+    </div>
+
+    <!-- Hidden weather results container (shown after search) -->
+    <div class="weather-container" id="weatherContainer">
+      <div id="weatherResult" class="result-box"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Initialize Vanta background
+    VANTA.CLOUDS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00
+    });
+  </script>
+</body>
+
+</html>
