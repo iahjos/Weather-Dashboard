@@ -142,6 +142,8 @@ async function getWeather() {
     output += `</div>`;
     weatherResult.innerHTML = output;
     weatherContainer.classList.add("visible");
+    document.querySelector('.search-section').classList.replace("centered", "top");
+
 
   } catch (error) {
     console.error('Error:', error);
